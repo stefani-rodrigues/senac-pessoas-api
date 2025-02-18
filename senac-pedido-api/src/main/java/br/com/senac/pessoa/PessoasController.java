@@ -56,7 +56,7 @@ public class PessoasController {
     @DeleteMapping("/{id}")
     public void excluirPessoa(@PathVariable Long id) throws Exception {
         try {
-            if(!pessoasRepositorio.existsById(id)) throw new Exception("Registro não encontrado");
+            if(!pessoasRepositorio.existsById(id)) throw new Exception("Registro não encontrado.");
 
             pessoasRepositorio.deleteById(id);
         } catch (Exception e) {
