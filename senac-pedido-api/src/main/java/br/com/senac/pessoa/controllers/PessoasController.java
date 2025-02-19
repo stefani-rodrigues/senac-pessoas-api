@@ -1,5 +1,7 @@
-package br.com.senac.pessoa;
+package br.com.senac.pessoa.controllers;
 
+import br.com.senac.pessoa.entidades.Pessoas;
+import br.com.senac.pessoa.repositorios.PessoasRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -56,7 +58,7 @@ public class PessoasController {
     @DeleteMapping("/{id}")
     public void excluirPessoa(@PathVariable Long id) throws Exception {
         try {
-            if(!pessoasRepositorio.existsById(id)) throw new Exception("Registro não encontrado! Nono");
+            if(!pessoasRepositorio.existsById(id)) throw new Exception("Registro não encontrado! Novo");
 
             pessoasRepositorio.deleteById(id);
         } catch (Exception e) {
